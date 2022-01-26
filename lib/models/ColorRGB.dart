@@ -27,7 +27,7 @@ class ColorRGB {
     if (other is ColorRGB) {
       return (this.r == other.r && this.g == other.g && this.b == other.b);
     }
-    return null;
+    return false;
   }
 
   @override
