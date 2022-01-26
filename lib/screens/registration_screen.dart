@@ -16,7 +16,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   final _auth = FirebaseAuth.instance;
   final RoundedLoadingButtonController _controller =
       RoundedLoadingButtonController();
-  String? email, password;
+  String email = "", password = "";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +56,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             ),
             TextField(
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.black),
+              style: const TextStyle(
+                color: Colors.black,
+              ),
               obscureText: true,
               keyboardType: TextInputType.visiblePassword,
               onChanged: (value) {
@@ -75,7 +78,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               onPressed: () async {
                 try {
                   final newUser = await _auth.createUserWithEmailAndPassword(
-                      email: email!, password: password!);
+                      email: email, password: password);
                   if (newUser != null) {
                     _controller.success();
                     Future.delayed(Duration(milliseconds: 500), () {
@@ -87,7 +90,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   _controller.error();
                   Fluttertoast.showToast(msg: e.message!);
                   print(e);
-                  Future.delayed(Duration(milliseconds: 500), () {
+                  Future.delayed(const Duration(milliseconds: 500), () {
                     _controller.reset();
                   });
                 }

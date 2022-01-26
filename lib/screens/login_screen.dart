@@ -14,7 +14,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final _auth = FirebaseAuth.instance;
-  String? email, password;
+  String email = "", password = "";
   RoundedLoadingButtonController _controller = RoundedLoadingButtonController();
 
   @override
@@ -54,6 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 8.0,
             ),
             TextField(
+              textAlign: TextAlign.center,
               style: TextStyle(color: Colors.black),
               obscureText: true,
               keyboardType: TextInputType.visiblePassword,
@@ -77,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   //Implement login functionality.
                   try {
                     final user = await _auth.signInWithEmailAndPassword(
-                        email: email!, password: password!);
+                        email: email, password: password);
                     if (user != null) {
                       _controller.success();
                       Future.delayed(Duration(milliseconds: 500), () {
