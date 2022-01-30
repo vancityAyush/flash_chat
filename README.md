@@ -6,8 +6,5 @@ A Chatting App using Firebase Cloudstore.
 This Chatting app lets you exchange text message.
 There are even animations in this projects.
 
-![alt text ](https://github.com/vancityAyush/flash_chat/tree/master/screenshots/ss1.png)
-![alt text ](https://github.com/vancityAyush/flash_chat/tree/master/screenshots/ss2.png)
-![alt text ](https://github.com/vancityAyush/flash_chat/tree/master/screenshots/ss3.png)
-![alt text ](https://github.com/vancityAyush/flash_chat/tree/master/screenshots/ss4.png)
+[alt text ](https://github.com/vancityAyush/flash_chat/tree/master/screenshots/ss4.png)
 [Download Apk](flash%20chat.apk)
